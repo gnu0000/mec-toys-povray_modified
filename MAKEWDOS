@@ -1,0 +1,280 @@
+CC      =wcc386
+LINKER  =wlink
+
+!IF "$(MODE)" == "DEBUG"
+EXEC   =POVRAYD
+ODIR   =o\bug
+CFLAGS = /mf /fpi /fp5 /zp4 /5r /w5 /od -zq -d3 -fo=$(ODIR)\$(@B).obj
+LIBS   = zlib.lib, libpng.lib, pmode.lib, ztimer.lib, gnu32d
+DBUG   = DEBUG  ALL
+STUB   = WSTUBQ.exe
+EXCP   = copy $(@B).e $(@B).exe 
+!ELSE  
+EXEC   =POVRAY
+ODIR   =o\opt
+CFLAGS = /mf /fpi /fp5 /zp1 /5r /w5 /oneatx -zq -fo=$(ODIR)\$(@B).obj
+LIBS   =zlib.lib, libpng.lib, pmode.lib, ztimer.lib, gnu32o
+DBUG   =
+STUB   = PSTUB.exe
+EXCP   = 4gwbind 4gwpro.exe $(@B).e $(@B).exe -N
+!ENDIF
+
+CINCS  = /i=lpng101 /i=zlib
+
+
+all : $(EXEC).exe
+
+# msdostxt, 
+#
+#
+
+
+$(ODIR)\povray.obj : povray.c frame.h povproto.h bezier.h blob.h bbox.h cones.h csg.h discs.h express.h fractal.h hfield.h lathe.h lighting.h mem.h mesh.h polysolv.h objects.h octree.h parse.h pigment.h point.h poly.h polygon.h povray.h optin.h optout.h quadrics.h pgm.h png_pov.h ppm.h prism.h radiosit.h render.h sor.h spheres.h super.h targa.h texture.h tokenize.h torus.h triangle.h truetype.h userio.h lbuffer.h vbuffer.h gnucmd.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\atmosph.obj : atmosph.c frame.h vector.h povproto.h atmosph.h chi2.h colour.h povray.h texture.h pigment.h objects.h lighting.h matrices.h media.h texture.h ray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\bbox.obj : bbox.c frame.h vector.h povproto.h bbox.h matrices.h objects.h povray.h render.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\bcyl.obj : bcyl.c frame.h vector.h povproto.h bcyl.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\bezier.obj : bezier.c frame.h vector.h povproto.h bezier.h matrices.h objects.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\blob.obj : blob.c frame.h povray.h vector.h povproto.h blob.h bbox.h bsphere.h lighting.h matrices.h objects.h polysolv.h texture.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\boxes.obj : boxes.c frame.h povray.h vector.h povproto.h bbox.h boxes.h matrices.h objects.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\bsphere.obj : bsphere.c frame.h vector.h povproto.h bsphere.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\camera.obj : camera.c frame.h vector.h povproto.h camera.h matrices.h normal.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\chi2.obj : chi2.c frame.h povproto.h chi2.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\colour.obj : colour.c frame.h vector.h povproto.h colour.h pigment.h normal.h texture.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\cones.obj : cones.c frame.h povray.h vector.h povproto.h bbox.h cones.h matrices.h objects.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\console.obj : console.c console.h pmode.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\csg.obj : csg.c frame.h povray.h vector.h povproto.h bbox.h csg.h hfield.h matrices.h objects.h planes.h quadrics.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\discs.obj : discs.c frame.h povray.h vector.h povproto.h bbox.h discs.h matrices.h objects.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\express.obj : express.c frame.h vector.h povproto.h parse.h parstxtr.h colour.h express.h matrices.h povray.h tokenize.h pattern.h pigment.h normal.h texture.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\fractal.obj : fractal.c frame.h povray.h vector.h povproto.h bbox.h matrices.h objects.h spheres.h fractal.h quatern.h hcmplx.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\gif.obj : gif.c frame.h povproto.h gif.h gifdecod.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\gifdecod.obj : gifdecod.c frame.h povproto.h gif.h gifdecod.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\hcmplx.obj : hcmplx.c frame.h povray.h vector.h povproto.h fractal.h spheres.h hcmplx.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\hfield.obj : hfield.c frame.h povray.h vector.h povproto.h hfield.h matrices.h objects.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\iff.obj : iff.c frame.h povproto.h iff.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\image.obj : image.c frame.h vector.h povproto.h texture.h image.h matrices.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\interior.obj : interior.c frame.h vector.h povproto.h chi2.h colour.h povray.h texture.h pigment.h objects.h lighting.h matrices.h interior.h povray.h point.h texture.h ray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\lathe.obj : lathe.c frame.h povray.h vector.h povproto.h bbox.h bcyl.h lathe.h polysolv.h matrices.h objects.h torus.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\lbuffer.obj : lbuffer.c frame.h vector.h povproto.h point.h povray.h bbox.h lbuffer.h objects.h triangle.h vlbuffer.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\lighting.obj : lighting.c frame.h vector.h povproto.h blob.h bbox.h colour.h image.h interior.h lbuffer.h lighting.h media.h mesh.h normal.h objects.h octree.h pattern.h pigment.h povray.h radiosit.h ray.h render.h texture.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\matrices.obj : matrices.c frame.h vector.h povproto.h matrices.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\media.obj : media.c frame.h vector.h povproto.h chi2.h colour.h povray.h texture.h pigment.h objects.h lighting.h matrices.h media.h pattern.h povray.h point.h texture.h ray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\mem.obj : mem.c frame.h povproto.h mem.h parse.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\mesh.obj : mesh.c frame.h vector.h povproto.h bbox.h matrices.h objects.h mesh.h texture.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\msdosvid.obj : msdosvid.c frame.h vesavbe.h povproto.h povray.h msdosall.h gnucmd.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\normal.obj : normal.c frame.h vector.h povproto.h texture.h image.h matrices.h normal.h povray.h txttest.h pigment.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\objects.obj : objects.c frame.h povray.h vector.h povproto.h interior.h objects.h texture.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\octree.obj : octree.c frame.h vector.h povproto.h povray.h octree.h radiosit.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\optin.obj : optin.c frame.h povproto.h bbox.h lighting.h mem.h octree.h povray.h optin.h optout.h parse.h radiosit.h render.h tokenize.h vlbuffer.h ppm.h targa.h userio.h png_pov.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\optout.obj : optout.c frame.h vector.h povproto.h atmosph.h bezier.h blob.h bbox.h cones.h csg.h discs.h fractal.h hfield.h lathe.h lighting.h mesh.h polysolv.h objects.h parse.h point.h poly.h polygon.h octree.h quadrics.h pgm.h ppm.h prism.h radiosit.h render.h sor.h spheres.h super.h targa.h texture.h torus.h triangle.h truetype.h userio.h lbuffer.h vbuffer.h povray.h optin.h optout.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\parse.obj : parse.c frame.h vector.h povproto.h parse.h parstxtr.h atmosph.h bezier.h blob.h boxes.h bsphere.h colour.h cones.h csg.h discs.h express.h fractal.h gif.h hfield.h iff.h image.h interior.h lathe.h polysolv.h matrices.h mesh.h normal.h objects.h octree.h pigment.h planes.h poly.h polygon.h povray.h pgm.h ppm.h prism.h quadrics.h radiosit.h render.h sor.h spheres.h super.h targa.h texture.h tokenize.h torus.h triangle.h truetype.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\parstxtr.obj : parstxtr.c frame.h vector.h povproto.h parse.h parstxtr.h colour.h express.h gif.h iff.h image.h matrices.h media.h normal.h pigment.h povray.h pgm.h ppm.h targa.h png_pov.h texture.h tokenize.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\pattern.obj : pattern.c frame.h vector.h povproto.h matrices.h pattern.h povray.h texture.h image.h txttest.h colour.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\pgm.obj : pgm.c frame.h povproto.h povray.h pgm.h ppm.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\pigment.obj : pigment.c frame.h vector.h povproto.h texture.h colour.h image.h matrices.h pigment.h txttest.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\planes.obj : planes.c frame.h povray.h vector.h povproto.h matrices.h objects.h planes.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\png_pov.obj : png_pov.c frame.h povproto.h povray.h optout.h png.h png_pov.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\point.obj : point.c frame.h vector.h povproto.h point.h matrices.h objects.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\poly.obj : poly.c frame.h vector.h povproto.h bbox.h polysolv.h matrices.h objects.h poly.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\polygon.obj : polygon.c frame.h vector.h povproto.h matrices.h objects.h polygon.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\polysolv.obj : polysolv.c frame.h povray.h povproto.h vector.h polysolv.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\ppm.obj : ppm.c frame.h povproto.h povray.h optout.h pgm.h ppm.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\prism.obj : prism.c frame.h povray.h vector.h povproto.h bbox.h matrices.h objects.h polysolv.h prism.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\quadrics.obj : quadrics.c frame.h povray.h vector.h povproto.h bbox.h objects.h matrices.h planes.h quadrics.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\quatern.obj : quatern.c frame.h povray.h vector.h povproto.h fractal.h quatern.h spheres.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\radiosit.obj : radiosit.c frame.h lighting.h vector.h povray.h optin.h povproto.h render.h texture.h octree.h radiosit.h ray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\rad_data.obj : rad_data.c frame.h octree.h radiosit.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\ray.obj : ray.c frame.h vector.h povproto.h povray.h interior.h ray.h texture.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\render.obj : render.c frame.h vector.h povproto.h bbox.h chi2.h colour.h interior.h lighting.h normal.h objects.h octree.h optout.h povray.h radiosit.h ray.h render.h targa.h texture.h vbuffer.h userio.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\sor.obj : sor.c frame.h povray.h vector.h povproto.h bbox.h polysolv.h matrices.h objects.h sor.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\spheres.obj : spheres.c frame.h povray.h vector.h povproto.h bbox.h matrices.h objects.h spheres.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\super.obj : super.c frame.h povray.h vector.h povproto.h bbox.h matrices.h objects.h super.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\targa.obj : targa.c frame.h povproto.h povray.h targa.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\texture.obj : texture.c frame.h povray.h vector.h povproto.h texture.h image.h matrices.h normal.h pigment.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\tokenize.obj : tokenize.c frame.h povray.h povproto.h parse.h povray.h render.h texture.h tokenize.h express.h matrices.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\torus.obj : torus.c frame.h povray.h vector.h povproto.h bbox.h polysolv.h matrices.h objects.h torus.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\triangle.obj : triangle.c frame.h povray.h vector.h povproto.h matrices.h objects.h triangle.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\truetype.obj : truetype.c frame.h povray.h vector.h povproto.h bbox.h matrices.h objects.h truetype.h csg.h povray.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\txttest.obj : txttest.c frame.h vector.h povproto.h texture.h povray.h txttest.h pattern.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\userio.obj : userio.c frame.h vector.h povproto.h parse.h povray.h tokenize.h userio.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\vbuffer.obj : vbuffer.c frame.h vector.h povproto.h bbox.h boxes.h hfield.h lighting.h matrices.h objects.h povray.h render.h triangle.h vbuffer.h vlbuffer.h userio.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\vesavbe.obj : vesavbe.c vesavbe.h pmode.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\vlbuffer.obj : vlbuffer.c frame.h vector.h povproto.h bbox.h vlbuffer.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\warps.obj : warps.c frame.h vector.h povproto.h matrices.h warps.h pattern.h texture.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\gnucmd.obj : gnucmd.c frame.h povproto.h bbox.h lighting.h mem.h octree.h povray.h optin.h optout.h parse.h radiosit.h render.h tokenize.h vlbuffer.h ppm.h targa.h userio.h png_pov.h msdosall.h GnuCmd.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(ODIR)\gnutxt.obj : gnutxt.c frame.h povproto.h povray.h optin.h msdosall.h gnucmd.h 
+   $(CC) $(CFLAGS) $(CINCS) $(@B).c
+
+$(EXEC).exe : $(ODIR)\povray.obj $(ODIR)\atmosph.obj $(ODIR)\bbox.obj $(ODIR)\bcyl.obj $(ODIR)\bezier.obj $(ODIR)\blob.obj $(ODIR)\boxes.obj $(ODIR)\bsphere.obj $(ODIR)\camera.obj $(ODIR)\chi2.obj $(ODIR)\colour.obj $(ODIR)\cones.obj $(ODIR)\console.obj $(ODIR)\csg.obj $(ODIR)\discs.obj $(ODIR)\express.obj $(ODIR)\fractal.obj $(ODIR)\gif.obj $(ODIR)\gifdecod.obj $(ODIR)\hcmplx.obj $(ODIR)\hfield.obj $(ODIR)\iff.obj $(ODIR)\image.obj $(ODIR)\interior.obj $(ODIR)\lathe.obj $(ODIR)\lbuffer.obj $(ODIR)\lighting.obj $(ODIR)\matrices.obj $(ODIR)\media.obj $(ODIR)\mem.obj $(ODIR)\mesh.obj $(ODIR)\msdosvid.obj $(ODIR)\normal.obj $(ODIR)\objects.obj $(ODIR)\octree.obj $(ODIR)\optin.obj $(ODIR)\optout.obj $(ODIR)\parse.obj $(ODIR)\parstxtr.obj $(ODIR)\pattern.obj $(ODIR)\pgm.obj $(ODIR)\pigment.obj $(ODIR)\planes.obj $(ODIR)\png_pov.obj $(ODIR)\point.obj $(ODIR)\poly.obj $(ODIR)\polygon.obj $(ODIR)\polysolv.obj $(ODIR)\ppm.obj $(ODIR)\prism.obj $(ODIR)\quadrics.obj $(ODIR)\quatern.obj $(ODIR)\radiosit.obj $(ODIR)\rad_data.obj $(ODIR)\ray.obj $(ODIR)\render.obj $(ODIR)\sor.obj $(ODIR)\spheres.obj $(ODIR)\super.obj $(ODIR)\targa.obj $(ODIR)\texture.obj $(ODIR)\tokenize.obj $(ODIR)\torus.obj $(ODIR)\triangle.obj $(ODIR)\truetype.obj $(ODIR)\txttest.obj $(ODIR)\userio.obj $(ODIR)\vbuffer.obj $(ODIR)\vesavbe.obj $(ODIR)\vlbuffer.obj $(ODIR)\warps.obj $(ODIR)\gnucmd.obj $(ODIR)\gnutxt.obj 
+	$(LINKER) @<<$(@B).lnk
+system dos4g
+option stub=$(STUB)
+option verbose
+option stack=90000
+option map=$(@B)
+option caseexact
+$(DBUG)
+name   $(@B).e
+file $(ODIR)\povray ,$(ODIR)\atmosph ,$(ODIR)\bbox ,$(ODIR)\bcyl ,$(ODIR)\bezier 
+file $(ODIR)\blob ,$(ODIR)\boxes ,$(ODIR)\bsphere ,$(ODIR)\camera ,$(ODIR)\chi2 
+file $(ODIR)\colour ,$(ODIR)\cones ,$(ODIR)\console ,$(ODIR)\csg ,$(ODIR)\discs 
+file $(ODIR)\express ,$(ODIR)\fractal ,$(ODIR)\gif ,$(ODIR)\gifdecod ,$(ODIR)\hcmplx 
+file $(ODIR)\hfield ,$(ODIR)\iff ,$(ODIR)\image ,$(ODIR)\interior ,$(ODIR)\lathe 
+file $(ODIR)\lbuffer ,$(ODIR)\lighting ,$(ODIR)\matrices ,$(ODIR)\media ,$(ODIR)\mem 
+file $(ODIR)\mesh ,$(ODIR)\msdosvid ,$(ODIR)\normal ,$(ODIR)\objects ,$(ODIR)\octree 
+file $(ODIR)\optin ,$(ODIR)\optout ,$(ODIR)\parse ,$(ODIR)\parstxtr ,$(ODIR)\pattern 
+file $(ODIR)\pgm ,$(ODIR)\pigment ,$(ODIR)\planes ,$(ODIR)\png_pov ,$(ODIR)\point 
+file $(ODIR)\poly ,$(ODIR)\polygon ,$(ODIR)\polysolv ,$(ODIR)\ppm ,$(ODIR)\prism 
+file $(ODIR)\quadrics ,$(ODIR)\quatern ,$(ODIR)\radiosit ,$(ODIR)\rad_data ,$(ODIR)\ray 
+file $(ODIR)\render ,$(ODIR)\sor ,$(ODIR)\spheres ,$(ODIR)\super ,$(ODIR)\targa 
+file $(ODIR)\texture ,$(ODIR)\tokenize ,$(ODIR)\torus ,$(ODIR)\triangle ,$(ODIR)\truetype 
+file $(ODIR)\txttest ,$(ODIR)\userio ,$(ODIR)\vbuffer ,$(ODIR)\vesavbe ,$(ODIR)\vlbuffer 
+file $(ODIR)\warps ,$(ODIR)\gnucmd ,$(ODIR)\gnutxt 
+library $(LIBS)
+<<nokeep
+  $(EXCP)
+  del  $(@B).E
+

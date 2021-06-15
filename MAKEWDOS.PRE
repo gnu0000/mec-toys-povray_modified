@@ -1,0 +1,71 @@
+~
+~ premake file for the watcom dos version
+~ ---------------------------------------
+~
+CC      =wcc386
+LINKER  =wlink
+
+!IF "$(MODE)" == "DEBUG"
+EXEC   =POVRAYD
+ODIR   =o\bug
+CFLAGS = /mf /fpi /fp5 /zp4 /5r /w5 /od -zq -d3 -fo=$(ODIR)\$(@B).obj
+LIBS   = zlib.lib, libpng.lib, pmode.lib, ztimer.lib, gnu32d
+DBUG   = DEBUG  ALL
+STUB   = WSTUBQ.exe
+EXCP   = copy $(@B).e $(@B).exe 
+!ELSE  
+EXEC   =POVRAY
+ODIR   =o\opt
+CFLAGS = /mf /fpi /fp5 /zp1 /5r /w5 /oneatx -zq -fo=$(ODIR)\$(@B).obj
+LIBS   =zlib.lib, libpng.lib, pmode.lib, ztimer.lib, gnu32o
+DBUG   =
+STUB   = PSTUB.exe
+EXCP   = 4gwbind 4gwpro.exe $(@B).e $(@B).exe -N
+!ENDIF
+
+CINCS  = /i=lpng101 /i=zlib
+
+:INCLUDELIST lpng101;zlib
+
+all : $(EXEC).exe
+
+# msdostxt, 
+#
+#
+:FileList Files =
+     {
+     povray,
+     atmosph,  bbox,     bcyl,     bezier,   blob,     boxes,    bsphere,  
+     camera,   chi2,     colour,   cones,    console,  csg,      discs,    
+     express,  fractal,  gif,      gifdecod, hcmplx,   hfield,   iff,      
+     image,    interior, lathe,    lbuffer,  lighting, matrices, media,    
+     mem,      mesh,                msdosvid, normal,   objects,  octree,   
+     optin,    optout,   parse,    parstxtr, pattern,  pgm,      pigment,  
+     planes,   png_pov,  point,    poly,     polygon,  polysolv, 
+     ppm,      prism,    quadrics, quatern,  radiosit, rad_data, ray,      
+     render,   sor,      spheres,  super,    targa,    texture,  tokenize, 
+     torus,    triangle, truetype, txttest,  userio,   vbuffer,  vesavbe,  
+     vlbuffer, warps,
+     gnucmd,   gnutxt
+     }
+
+:CmdList Cmp = {"$(CC) $(CFLAGS) $(CINCS) $(@B).c"}
+
+:Expand Files,Cmp,$(ODIR)\,.obj,,.c,INCLUDES 
+
+$(EXEC).exe : {F: Files,$(ODIR)\,.obj}
+	$(LINKER) @<<$(@B).lnk
+system dos4g
+option stub=$(STUB)
+option verbose
+option stack=90000
+option map=$(@B)
+option caseexact
+$(DBUG)
+name   $(@B).e
+{X:Files,$(ODIR)\,,comma,file ,5}
+library $(LIBS)
+<<nokeep
+  $(EXCP)
+  del  $(@B).E
+

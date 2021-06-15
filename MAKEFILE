@@ -1,0 +1,17 @@
+# ***********************************************************************
+!IF "$(DEVELOP)" == "WAT11"
+# ***********************************************************************
+
+all :
+   premake MakeWDos.pre MakeWDOS
+   nmake -nologo -f MakeWDOS
+
+debug:
+   premake MakeWDos.pre MakeWDOS
+   nmake -nologo -f MakeWDOS MODE=DEBUG
+
+# ***********************************************************************
+!ELSE
+!ERROR you Must type "DEVELOP WAT" before calling nmake
+!ENDIF
+# ***********************************************************************

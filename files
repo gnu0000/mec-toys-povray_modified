@@ -1,0 +1,192 @@
+
+ Volume in drive C is unlabeled      Serial number is 4B04:4D32
+ Directory of  C:\ray\src\*.c
+
+ 6-01-98   7:08p         27,551  ATMOSPH.C
+ 5-22-98   5:47p         38,709  BBOX.C
+ 5-22-98   5:47p         15,586  BCYL.C
+ 8-13-98   6:02p         47,105  BEZIER.C
+ 8-31-98   7:56p         74,793  BLOB.C
+ 6-01-98   7:09p         19,892  BOXES.C
+ 5-22-98   1:44p         13,702  BSPHERE.C
+ 5-16-98  12:21a          5,701  CAMERA.C
+ 5-22-98   5:47p         19,499  CHI2.C
+ 5-16-98  12:21a         10,713  COLOUR.C
+ 6-01-98   7:09p         19,335  CONES.C
+ 6-24-96   6:53p         39,043  CONSOLE.C
+ 7-20-98   7:57p         21,370  CSG.C
+ 6-02-98   3:38p         12,126  DISCS.C
+ 8-31-98   3:33p         55,019  EXPRESS.C
+ 6-01-98   7:10p         20,432  FRACTAL.C
+ 5-16-98  12:22a          8,682  GIF.C
+ 5-22-98   5:47p         16,160  GIFDECOD.C
+ 5-22-98   5:47p         30,977  HCMPLX.C
+ 8-09-98  10:52p         47,049  HFIELD.C
+ 5-22-98   5:47p         13,635  IFF.C
+ 5-22-98   5:47p         28,300  IMAGE.C
+ 8-31-98   7:45p          6,661  INTERIOR.C
+ 6-01-98   7:10p         34,179  LATHE.C
+ 5-22-98   5:50p         31,509  LBUFFER.C
+ 7-23-98  12:43p         86,365  LIGHTING.C
+ 6-16-98   2:18p         24,003  MATRICES.C
+ 9-13-98   2:58p         35,590  MEDIA.C
+ 5-22-98   5:48p         25,393  MEM.C
+ 8-05-98   4:21p         40,241  MESH.C
+ 9-13-98   3:10p         14,918  MSDOSTXT.C
+ 7-15-98   8:02p         80,334  MSDOSVID.C
+ 6-03-98   6:05p         16,698  NORMAL.C
+ 9-12-98   2:15p         15,096  OBJECTS.C
+ 5-22-98   1:55p         30,318  OCTREE.C
+ 7-11-98   7:40p         58,594  OPTIN.C
+ 8-09-98  10:53p         41,703  OPTOUT.C
+ 8-13-98   6:20p        138,152  PARSE.C
+ 8-31-98   8:02p         81,203  PARSTXTR.C
+ 7-15-98   7:25p         52,460  PATTERN.C
+ 5-16-98  12:22a          6,025  PGM.C
+ 8-03-98   8:04p         18,480  PIGMENT.C
+ 6-01-98   7:12p         12,187  PLANES.C
+ 6-01-98   7:12p         52,729  PNG_POV.C
+ 6-01-98   7:12p         15,809  POINT.C
+ 6-01-98   7:12p         29,603  POLY.C
+ 6-01-98   7:12p         22,199  POLYGON.C
+ 5-22-98   5:48p         32,073  POLYSOLV.C
+ 6-01-98   7:12p         52,921  POVRAY.C
+ 6-01-98   7:12p         14,154  PPM.C
+ 6-01-98   7:12p         43,232  PRISM.C
+ 6-01-98   7:13p         29,589  QUADRICS.C
+ 5-22-98   5:40p         11,957  QUATERN.C
+ 5-22-98   5:48p         32,435  RADIOSIT.C
+ 5-16-98  12:23a         33,987  RAD_DATA.C
+ 5-16-98  12:23a          5,244  RAY.C
+ 8-09-98  10:54p         93,902  RENDER.C
+ 6-01-98   7:13p         27,216  SOR.C
+ 6-01-98   7:13p         16,355  SPHERES.C
+ 6-01-98   7:13p         31,597  SUPER.C
+ 6-01-98   7:13p         31,299  TARGA.C
+ 8-31-98   7:51p         31,697  TEXTURE.C
+ 9-13-98   2:57p         81,996  TOKENIZE.C
+ 6-01-98   7:13p         17,213  TORUS.C
+ 6-01-98   7:13p         28,071  TRIANGLE.C
+ 6-01-98   7:14p         89,995  TRUETYPE.C
+ 5-16-98  12:20a          7,139  TXTTEST.C
+ 8-31-98   6:19p         14,241  USERIO.C
+ 7-23-98  12:45p         44,833  VBUFFER.C
+ 6-24-96   7:32p         32,399  VESAVBE.C
+ 5-16-98  12:23a         13,326  VLBUFFER.C
+ 8-05-98   2:13p         12,119  WARPS.C
+      2,384,818 bytes in 72 files and 0 dirs    2,629,632 bytes allocated
+  6,720,741,376 bytes free
+
+ Volume in drive C is unlabeled      Serial number is 4B04:4D32
+ Directory of  C:\ray\src\*.h
+
+ 6-01-98   7:09p          3,747  ATMOSPH.H
+ 5-22-98   5:47p          3,871  BBOX.H
+ 5-22-98   5:47p          3,378  BCYL.H
+ 5-22-98   5:47p          3,379  BEZIER.H
+ 5-22-98   5:47p          5,215  BLOB.H
+ 6-01-98   7:09p          2,484  BOXES.H
+ 5-22-98   5:47p          2,599  BSPHERE.H
+ 5-22-98   5:47p          3,553  CAMERA.H
+ 5-22-98   5:47p          2,084  CHI2.H
+ 5-22-98   5:47p          2,696  COLOUR.H
+ 5-22-98   5:47p          2,797  CONES.H
+ 8-05-98   3:08p          7,112  CONFIG.H
+ 5-15-96   6:52p          4,225  CONSOLE.H
+ 5-22-98   5:47p          2,759  CSG.H
+ 6-12-96   9:40p          5,568  DEBUG.H
+ 5-22-98   5:47p          2,666  DISCS.H
+ 5-22-98   5:47p          2,859  EXPRESS.H
+ 5-22-98   5:47p          4,547  FRACTAL.H
+ 8-27-98   2:52p         38,104  FRAME.H
+ 5-22-98   5:47p          2,206  GIF.H
+ 5-22-98   5:47p          2,148  GIFDECOD.H
+ 5-22-98   5:47p          3,962  HCMPLX.H
+ 5-22-98   5:47p          3,379  HFIELD.H
+ 5-22-98   5:47p          2,128  IFF.H
+ 5-22-98   5:50p          2,807  IMAGE.H
+ 8-31-98   7:45p          2,458  INTERIOR.H
+ 5-22-98   5:47p          3,381  LATHE.H
+ 5-22-98   5:47p          2,316  LBUFFER.H
+ 5-22-98   5:48p          2,506  LIGHTING.H
+ 5-22-98   5:48p          3,749  MATRICES.H
+ 6-01-98   7:11p          2,700  MEDIA.H
+ 5-22-98   5:48p          3,087  MEM.H
+ 5-22-98   5:48p          4,754  MESH.H
+ 6-24-96   6:52p          1,766  MSDOSALL.H
+ 5-22-98   5:48p          2,591  NORMAL.H
+ 5-22-98   5:48p          6,539  OBJECTS.H
+ 5-22-98   1:53p          3,927  OCTREE.H
+ 5-22-98   5:48p          4,293  OPTIN.H
+ 9-13-98   3:22p          2,872  OPTOUT.H
+ 8-31-98   2:50p         12,685  PARSE.H
+ 8-13-98   6:25p          2,578  PARSTXTR.H
+ 6-03-98   5:32p          5,225  PATTERN.H
+ 5-22-98   5:48p          2,120  PGM.H
+ 5-22-98   5:48p          2,688  PIGMENT.H
+ 5-22-98   5:48p          2,373  PLANES.H
+ 5-15-96   6:59p         13,503  PMODE.H
+ 5-22-98   5:48p          2,200  PNG_POV.H
+ 5-22-98   5:48p          3,136  POINT.H
+ 5-22-98   5:48p          2,564  POLY.H
+ 5-22-98   5:48p          2,528  POLYGON.H
+ 5-22-98   5:48p          2,180  POLYSOLV.H
+ 5-22-98   5:53p          3,036  POVPROTO.H
+ 6-01-98   7:12p         11,892  POVRAY.H
+ 5-22-98   5:48p          2,162  PPM.H
+ 5-22-98   5:48p          3,756  PRISM.H
+ 5-22-98   5:48p          2,532  QUADRICS.H
+ 5-22-98   5:48p          2,515  QUATERN.H
+ 5-22-98   5:48p          3,559  RADIOSIT.H
+ 5-22-98   5:48p          2,358  RAY.H
+ 5-22-98   5:56p          2,925  RENDER.H
+ 5-22-98   5:48p          3,079  SOR.H
+ 6-01-98   7:13p          2,568  SPHERES.H
+ 5-22-98   5:48p          2,397  SUPER.H
+ 5-22-98   5:48p          2,180  TARGA.H
+ 8-31-98   7:52p          3,986  TEXTURE.H
+ 8-31-98   3:04p          3,684  TOKENIZE.H
+ 5-22-98   5:48p          2,550  TORUS.H
+ 5-22-98   5:48p          3,050  TRIANGLE.H
+ 5-22-98   5:54p          2,576  TRUETYPE.H
+ 5-22-98   5:48p          2,422  TXTTEST.H
+ 7-11-98   7:41p          3,224  USERIO.H
+ 5-22-98   5:48p          2,316  VBUFFER.H
+ 5-16-98  12:21a          7,265  VECTOR.H
+ 6-12-96   9:30p         10,627  VESAVBE.H
+ 5-22-98   5:55p          3,887  VLBUFFER.H
+ 5-22-98   2:06p          3,363  WARPS.H
+ 2-05-96   3:28p          5,586  ZTIMER.H
+        320,487 bytes in 77 files and 0 dirs    696,320 bytes allocated
+  6,720,741,376 bytes free
+
+ Volume in drive C is unlabeled      Serial number is 4B04:4D32
+ Directory of  C:\ray\src\*.lib
+
+ 9-13-98   3:16p        117,248  LIBPNG.LIB
+ 2-12-96  10:38p         24,064  PMODE.LIB
+ 9-13-98   3:15p         65,024  ZLIB.LIB
+ 2-12-96  10:38p          5,632  ZTIMER.LIB
+        211,968 bytes in 4 files and 0 dirs    221,184 bytes allocated
+  6,720,741,376 bytes free
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
